@@ -1,6 +1,6 @@
-exports.mockUsers = (page = 2) => {
+exports.mockUsers = (page = 10) => {
     var users = [];
-    for (let i = 0; i <= 500; i++) {
+    for (let i = 0; i <= parseInt(page); i++) {
         let tempU = {
             key: i,
             name: getDifferentText(),

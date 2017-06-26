@@ -1,0 +1,9 @@
+// 将设置放入此文件中以覆盖默认值和用户设置。
+{
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 0,
+    "html.format.enable": false,
+    "javascript.format.enable": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false
+}

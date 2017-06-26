@@ -12,7 +12,7 @@ var app = express();
 var exphbs = require('express-handlebars');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.html', exphbs({defaultLayout: 'main', extname: '.html', layoutsDir: path.join(__dirname, '/views/layouts')}));
+app.engine('.html', exphbs({defaultLayout: 'main', extname: '.html', layoutsDir: path.join(__dirname, './views/layouts')}));
 app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
@@ -23,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', users);
-app.use('/index', users);
+app.use('/', index);
+app.use('/user', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
