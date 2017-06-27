@@ -1,7 +1,13 @@
 # express-demo
 express-demo
 
-# webpack + react + express + handlebar
+# 后端：nodejs + express
+# 前端：webpack + react + antd
+
+**简单实现前后端交互，异步请求数据和展示**
+
+
+## 运行
 
 - git clone 到本地
 - cd /backend 
