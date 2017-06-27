@@ -14,7 +14,7 @@ var exphbs = require('express-handlebars');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.html', exphbs({defaultLayout: 'main', extname: '.html', layoutsDir: path.join(__dirname, './views/layouts')}));
 app.set('view engine', 'html');
-
+app.enable('view cache');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

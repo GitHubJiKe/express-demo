@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Layout } from 'antd';
+import { Table, Layout ,Button} from 'antd';
 // const { Header, Footer, Sider, Content } = Layout;
 import './App.css';
 import 'whatwg-fetch';
@@ -24,9 +24,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        let self = this;
-        var value = document.getElementById('my_data').value;
-        self.setState({ dataSource: JSON.parse(value) });
+        // let self = this;
+        // var value = document.getElementById('my_data').value;
+        // self.setState({ dataSource: JSON.parse(value) });
     }
 
     checkStatus(response) {
@@ -51,16 +51,17 @@ class App extends Component {
             .then(self.checkStatus)
             .then(self.parseJSON)
             .then(function (data) {
-                console.log('request succeeded with JSON response', data)
+                self.setState({dataSource:data.users});
             }).catch(function (error) {
                 console.log('request failed', error)
             })
     }
+
     render() {
         return (
             <div className="App">
                 <Layout>
-                    <Layout.Header>Header</Layout.Header>
+                    <Layout.Header><Button type='primary' onClick={this._handleChange.bind(this)}>get more users</Button></Layout.Header>
                     <Layout>
                         <Layout.Sider>Sider</Layout.Sider>
                         <Layout.Content>
@@ -69,6 +70,7 @@ class App extends Component {
                     </Layout>
                     <Layout.Footer>Footer</Layout.Footer>
                 </Layout>
+                
             </div>
         );
     }
